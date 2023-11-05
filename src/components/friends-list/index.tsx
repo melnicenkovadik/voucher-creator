@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import s from "./friends-list.module.scss";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface IFriendsList {
     isOpen: boolean;
@@ -18,7 +19,21 @@ export type  FriendType = {
 const FriendsList: FC<IFriendsList> = ({isOpen, friendPickHandler, friends}) => {
     if (!isOpen || friends?.length === 0) return null;
     return (
-        <div className={s.friends_list}
+        <motion.div
+            initial={{
+                height: 0,
+            }}
+            animate={{
+                height: "auto",
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30,
+                mass: 2
+            }}
+            whileTap={{scale: 0.99}}
+            className={s.friends_list}
              tabIndex={1}
         >
             {
@@ -44,7 +59,7 @@ const FriendsList: FC<IFriendsList> = ({isOpen, friendPickHandler, friends}) => 
                     );
                 })
             }
-        </div>
+        </motion.div>
     );
 };
 

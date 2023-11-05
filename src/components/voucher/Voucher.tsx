@@ -2,6 +2,7 @@ import React, {FC, useMemo} from "react";
 import styles from "./voucher.module.scss";
 import Image from "next/image";
 import {useTranslation} from "next-i18next";
+import {motion} from "framer-motion";
 
 interface IVoucher {
     sum: number;
@@ -34,11 +35,21 @@ const Voucher: FC<IVoucher> = ({sum = 100, ready = false}) => {
         return {
             filter: ready ? `brightness(${1.3})` : `brightness(${0.45 * 2})`,
         };
-    } , [ready]);
+    }, [ready]);
 
     return (
-        <div className={styles.voucher}
-             style={wrapperStyles}
+        <motion.div
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+            transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30,
+                mass: 2
+            }}
+            whileTap={{scale: 0.99}}
+            className={styles.voucher}
+            style={wrapperStyles}
         >
             <Image
                 className={styles.voucher__present}
@@ -60,13 +71,13 @@ const Voucher: FC<IVoucher> = ({sum = 100, ready = false}) => {
                 </div>
                 <div className={styles.voucher__bottom}>
                     <div className={styles.voucher__bottom_value}
-                            style={textStyle}
+                         style={textStyle}
                     >
                         <h2>{sum}$</h2>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

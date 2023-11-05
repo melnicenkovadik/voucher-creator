@@ -1,0 +1,22 @@
+.styled_btn {
+  height: 220px;
+  width: 220px;
+  border-radius: 9999px;
+  border: none;
+  padding: 0 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: #017062;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+
+  &:hover {
+    background: #014a4f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}

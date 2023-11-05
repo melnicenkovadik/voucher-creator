@@ -6,6 +6,7 @@ import useOutsideClick from "@/hooks/useOnClickOutside";
 import {useRouter} from "next/navigation";
 import {useTranslation} from "next-i18next";
 import styles from "./voucher-form.module.scss";
+import { motion } from "framer-motion";
 
 interface IVoucherForm {
     handleSubmit: any;
@@ -64,8 +65,12 @@ const VoucherForm: FC<IVoucherForm> = ({
 
     if (isSubmitted) {
         return (
-            <div className={styles.confettiWrapper}>
-                <div className={styles.confettiWrapper__content}>
+            <div
+                className={styles.confettiWrapper}>
+                <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className={styles.confettiWrapper__content}>
                     <div className={styles.confettiWrapper__content__title}>
                         {t("voucherCreated")}
                     </div>
@@ -79,7 +84,7 @@ const VoucherForm: FC<IVoucherForm> = ({
                             {t("goToHome")}
                         </button>
                     </div>
-                </div>
+                </motion.div>
             </div>
         );
     }
@@ -154,11 +159,15 @@ const VoucherForm: FC<IVoucherForm> = ({
                 <div className={styles.inputError}>
                     {errors?.message?.message || "  "}
                 </div>
-                <button
+                <motion.button
+                    whileTap={{ scale: !isValid ? 0.3 : 1 }}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+
                     disabled={!isValid}
                     type="submit" className={styles.submitBtn}>
                     {t("createVoucher")}
-                </button>
+                </motion.button>
             </form>
         </>
     );
