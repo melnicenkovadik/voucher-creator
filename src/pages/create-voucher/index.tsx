@@ -19,7 +19,7 @@ interface IFormInput {
 }
 
 
-export default ({allFriends = []}: {
+const CreateVoucher = ({allFriends = []}: {
     allFriends: FriendType[]
 }) => {
 
@@ -150,3 +150,5 @@ export async function getServerSideProps({locale}: any) {
         },
     };
 }
+
+export default CreateVoucher;

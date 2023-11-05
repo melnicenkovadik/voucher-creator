@@ -40,7 +40,7 @@ const VoucherForm: FC<IVoucherForm> = ({
     const friendPickHandler = useCallback((friend: FriendType) => {
         setValue("friend", friend.tel);
         setFocused(false);
-    }, [watch("friend"), setValue, focused, errors, isValid]);
+    }, [setValue]);
 
     const focusHandler = (bool: boolean) => {
         setFocused(bool);

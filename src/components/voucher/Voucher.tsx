@@ -22,19 +22,19 @@ const Voucher: FC<IVoucher> = ({sum = 100, ready = false}) => {
             boxShadow: `0 0 20px rgba(0, 0, 0, ${percent})`,
         };
 
-    }, [sum]);
+    }, [percent]);
 
     const presetStyles = useMemo(() => {
         return {
             filter: !ready ? `brightness(${0.4 * 2})` : `brightness(${1.3})`,
         };
-    }, [sum,ready]);
+    }, [ready]);
 
     const textStyle = useMemo(() => {
         return {
             filter: ready ? `brightness(${1.3})` : `brightness(${0.45 * 2})`,
         };
-    } , [sum,ready]);
+    } , [ready]);
 
     return (
         <div className={styles.voucher}
