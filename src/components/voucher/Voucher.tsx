@@ -1,5 +1,5 @@
 import React, {FC, useMemo} from "react";
-import styles from "./Voucher.module.scss";
+import styles from "./voucher.module.scss";
 import Image from "next/image";
 import {useTranslation} from "next-i18next";
 
