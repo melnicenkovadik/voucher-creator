@@ -1,0 +1,75 @@
+@use 'sass:math';
+@import './_variables.scss';
+
+// Breakpoint
+@mixin mobile {
+  @media (max-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-breakpoint}) {
+    @content;
+  }
+}
+@mixin on-tablet {
+  @media (max-width: #{$tablet-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+@function mobile-vw($pixels, $base-vw: $mobile-width) {
+  @return math.div($pixels * 100vw, $base-vw);
+}
+
+@function mobile-vh($pixels, $base-vh: $mobile-height) {
+  @return math.div($pixels * 100vh, $base-vh);
+}
+
+@function desktop-vw($pixels, $base-vw: $desktop-width) {
+  @return math.div($pixels * 100vw, $base-vw);
+}
+
+@function desktop-vh($pixels, $base-vh: $desktop-height) {
+  @return math.div($pixels * 100vh, $base-vh);
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+//
+@mixin h1 {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px; /* 88.889% */
+  letter-spacing: -0.9px;
+  text-transform: uppercase;
+  font-size: mobile-vw(45px);
+
+  @include desktop {
+    line-height: desktop-vh(96px);
+    letter-spacing: -2.2px;
+  }
+}

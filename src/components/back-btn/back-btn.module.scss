@@ -1,0 +1,45 @@
+.back{
+  &_wrapper{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+  }
+  &_arrow {
+    font-size: 20px;
+    color: #777777;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: #02FFB3;
+    }
+  }
+  &_btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: fit-content;
+    min-width: 50px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: #02FFB3;
+    }
+    &__icon {
+      font-size: 20px;
+      color: #777777;
+    }
+
+  }
+
+}

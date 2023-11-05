@@ -1,0 +1,15 @@
+{
+  "back": "Back",
+  "gift_voucher": "Gift Voucher",
+  "voucherCreated": "Voucher created!",
+  "voucherCreatedSubtitle": "We sent a message to your friend",
+  "goToHome": "Go to home",
+  "voucherSum": "Voucher sum",
+  "friendsPhoneNumber": "Friend's phone number",
+  "searchForAFriend": "Search for a friend",
+  "friendNotFound": "Friend not found",
+  "typeAMessage": "Type a message",
+  "createVoucher": "Create voucher",
+  "createNew": "Create New",
+  "message": "Message"
+}
