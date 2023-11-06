@@ -7,6 +7,14 @@
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
   &_title {
     font-size: 1.25rem;
     font-weight: 500;
@@ -22,6 +30,11 @@
   width: 75%;
   height: 100vh;
   padding: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .drawer {
@@ -33,7 +46,13 @@
   font-size: 0.85rem;
   width: 25vw;
   height: 100vh;
-    padding: 1rem;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
 }
 
 
